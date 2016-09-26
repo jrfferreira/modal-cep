@@ -100,13 +100,7 @@ jQuery(function($){
 	    22420008, 22420010, 22420012, 22420020, 22420030, 22420040, 22420041, 22420042, 22420043, 22421000, 22421010, 22421020, 22421022, 22421023, 22421024,
 	    22421025, 22421026, 22421027, 22421028, 22421029, 22421030, 22430000, 22430010, 22430020
 	    ];
-
-
-	$(document).ready(function() {
-	    $('#modalCEP').modal({keyboard: true});
-	    $('#modalCEP').modal('show');
-		$("#cep").mask("99999-999");
-	});
+	
 	
 	$.fn.verificaCEP = function() {
 		$.fn.buscaCEP(arrayCEP, document.getElementById("cep").value) ? $.fn.mostraModalResposta("entrega") : $.fn.mostraModalResposta("naoEntrega");
@@ -138,5 +132,7 @@ jQuery(function($){
 	        $('#naoEntrega').show();
 	    }
 	};
-       
+	
+  jQuery('#modalCEP').modal({keyboard: true}).modal('show');
+  jQuery("#cep").mask("99999-999");
 });
